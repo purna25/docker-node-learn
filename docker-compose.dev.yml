@@ -10,4 +10,13 @@ services:
       - /app/node_modules
     environment: 
       - NODE_ENV=development
+      - MONGO_USER=purna
+      - MONGO_PASSWORD=mypassword
+
     command: npm run dev
+  mongo:
+    environment: 
+       - MONGO_INITDB_ROOT_USERNAME=purna
+       - MONGO_INITDB_ROOT_PASSWORD=mypassword
+    volumes: 
+       - mongo-db:/data/db
