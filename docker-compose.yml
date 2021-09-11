@@ -5,5 +5,10 @@ services:
     ports: 
       - "3000:3000"
     environment: 
-    - PORT=3000
-    
+      - PORT=3000
+  
+  mongo:
+    image: mongo
+    environment: 
+       - MONGO_INITDB_ROOT_USERNAME=purna
+       - MONGO_INITDB_ROOT_PASSWORD=mypassword
