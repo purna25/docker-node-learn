@@ -27,7 +27,7 @@ const connectWithRetry = () => {
     .then(() => console.log("Connected to DB"))
     .catch((e)=>{
         console.log(e)
-        setTimeout(connectWithRetry, 5000)
+        setTimeout(connectWithRetry, 30000)
     })
     
 }
@@ -45,8 +45,8 @@ app.use(session({
         resave: false,
         saveUninitialized: false,
         httpOnly: true,
-        maxAge: 60000 * 60,
-    }
+        maxAge: 60000,
+    },
 }));
 
 

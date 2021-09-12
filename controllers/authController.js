@@ -1,7 +1,6 @@
 const User = require("../models/userModel")
 
 const bcrypt = require("bcryptjs")
-const { use } = require("../routes/userRoutes")
 
 
 exports.signUp = async (req, res) => {
