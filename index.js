@@ -37,6 +37,7 @@ connectWithRetry();
 const app = express();
 
 
+app.enable("trust proxy")
 app.use(session({
     store: new RedisStore({client: redisClient}),
     secret: SESSION_SECRET,
@@ -53,6 +54,7 @@ app.use(session({
 app.use(express.json())
 app.get("/api/v1", (req, res) => {
     res.send("<h2> Hi There!!!</h2>");
+    console.log("Yeah it ran.")
 });
 
 
